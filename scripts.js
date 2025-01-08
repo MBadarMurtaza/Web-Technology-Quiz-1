@@ -38,7 +38,12 @@ show_all.addEventListener("click", (e) => {
             });
 
         })
-    api = "https://jsonplaceholder.typicode.com/todos/"
+        .catch((err) => {
+            console.error("Api is not fetched properly: " + (err))
+        })
+        .finally(() => {
+            api = "https://jsonplaceholder.typicode.com/todos/"
+        })
 })
 
 form.addEventListener("submit", (e) => {
@@ -75,6 +80,12 @@ form.addEventListener("submit", (e) => {
                     }
                 }
             });
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+        .finally(() => {
+            api = "https://jsonplaceholder.typicode.com/todos/"
         })
 })
 
